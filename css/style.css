@@ -1,0 +1,205 @@
+body {
+	background: #19191a;
+    color: #A9A9A9;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    overflow: hidden;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+h2 {
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 18px;
+    margin: 0;
+}
+h3 {
+    color: #ffffff;
+    font-weight: normal;
+    margin-top: 30px;
+    font-size: 14px;
+}
+p {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 5px 0 0 0;
+}
+
+.container {
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container__counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container__counter__content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.container__counter__content img {
+    width: 27px;
+    margin: 0 0 0 15px;
+    height: 27px;
+}
+.container__counter__number {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+}
+.container__btn {
+    cursor: none;
+    margin: 50px 0 50px 0;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    width: 250px;
+    height: 250px;
+    background-repeat : no-repeat;
+    background-image: url('../img/tapanim.png');
+    animation: anim 0.3s steps(20);
+    padding: 0;
+}
+.container__btn:hover {
+    -webkit-transform: scale(.95);
+    -moz-transform: scale(.95);
+    -o-transform: scale(.95);
+    transform: scale(.95);
+}
+
+#cursor {
+    z-index: 9999;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.container__date {
+    color: #ffffff;
+    font-size: 12px;
+    margin: 30px 0 0 0;
+}
+
+.container__links-content {
+    display: flex;
+    width: 280px;
+    justify-content: space-between;
+}
+.links-content__hesus img, .links-content__donate img, .links-content__dev img {
+    text-align: center;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.links-content__hesus, .links-content__donate, .links-content__dev  {
+    text-align: center;
+}
+.links-content__hesus img:hover, .links-content__donate img:hover, .links-content__dev img:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.ball {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: green;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    font-size: 10vmin;
+    transform: translate(
+        calc( let(--x) * 1px), 
+        calc(let(--y) * 1px)
+    ) translate(-50%, -50%);
+}
+
+.hand-white {
+    display: none;
+}
+
+
+
+.treat {
+    --scale-x: 0;
+    --scale-y: 0;
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(50% - .5rem);
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmin;
+    font-weight: 700;
+    color: #ffffff;
+    transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) translate(-50%, -50%);
+    pointer-events: none;
+    animation: treat-enter 0.1s ease-in backwards, treat-exit 300ms linear calc((var(--lifetime, 3000) * 1ms) - 300ms) forwards;
+}
+
+.container__point-up {
+    position: relative;
+}
+.container__point-up__add-point {
+    color: #ffffff;
+    position: absolute;
+    top: -65px;
+    left: -25px;
+    align-self: flex-end;
+    font-size: 24px;
+    font-weight: 700;
+    animation-duration: 2s;
+    transform-origin: bottom;
+    animation-name: pointUp;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.container__users-online {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    opacity: .75;
+}
+
+@keyframes pointUp {
+    0%   { color: #ffffff; transform: translateY(0); }
+    100%   { opacity: 0; color: #b3ce18; transform: translateY(-50px);  }
+}
+
+@keyframes anim {
+    100% { background-position: -5000px; }
+}
+
+@media only screen and (max-width: 768px) {
+    #cursor {
+        display: none;
+    }
+    body, .container__btn {
+        cursor: unset;
+    }
+} 
