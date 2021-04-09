@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TapTapHesus</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon16.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylegift.css">
+</head>
+<body>
+    <div class="gift-container">
+        
+    </div>
+    <audio id="audio">
+        <source src="source/music.mp3" type="audio/mpeg">
+    </audio>
+    <div id="cursor"><img id="hand-img" src="img/hand.png"></div>
+    <div class="container">
+        <div class="container__users-online">Онлайн:(в разроботке)</div>
+        <div class="container__counter">
+            <div class="container__counter__content">
+                <div class="container__counter__number">У вас 0</div>
+                <div class="container__point-up"></div>
+                <img class="hand-white" src="img/hand_white.svg"> 
+                <img class="hand-dark" src="img/hand_black.svg"> 
+            </div>
+            <h2 class="container__counter__text">Раз погладили хесуса</h2>
+        </div>
+        <div class="treat-wrapper">
+            <div class="container__btn"></div>
+        </div>
+        <div class="container__links-content">
+            <div class="links-content__hesus">
+              <a href="https://www.twitch.tv/jesusavgn" target="_blank"><img src="img/twitch_hesus.svg"></a>
+              <p>Твич Хесуса</p>
+            </div>
+            <div class="links-content__dev">
+                <a href="https://vk.com/alibeg228" target="_blank"><img src="img/vk_dev.svg"></a>
+                <p>Автор</p>
+            </div>
+            <div class="links-content__donate" style="width: 90px;">
+              <a href="https://www.youtube.com/watch?v=VuuUsU8CBks" target="_blank"><img src="img/donation.svg"></a>
+              <p>Донат</p>
+            </div>
+        </div>
+        <h3 class="container__date">Дата запуска: 10.04.2021</h3>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+</html>
